@@ -1,14 +1,38 @@
 
 {% extends 'base.html.twig'%}
-  {% block body %}
-  <center><h1> Cette page affichera la liste des stages trié par Entrerpises </h1></center>
-<table>
+  {% block contenue %}
+  <center><h1> Liste des stages proposé par {{entreprise_ID}} </h1></center>
+  <table class="table">
+				<thead>
+					<tr>
 
-  <center><tr>
-      <td><a href="http://127.0.0.1:8000/stages/stage_1"> Entreprise 1 </a></td>
-      <td>Stage 1</td>
+						<th>
+							Stage
+						</th>
+						<th>
+							Entreprise
+						</th>
+						<th>
+						  Formation
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							Stage 1
+						</td>
+						<td>
+							{{entreprise_ID}}
+						</td>
+						<td>
+						 DUT info
+						</td>
 
-  </tr></center>
+					</tr>
+
+				</tbody>
+			</table>
 
 
   {% endblock %}

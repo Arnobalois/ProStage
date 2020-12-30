@@ -13,19 +13,19 @@ class ProStageController extends AbstractController
         return $this->render('pro_stage/index.html.twig');
     }
 
-    //Controller pour les pages des entrerpises
+    //Controller pour les pages des Entreprises
 
      public function filtreEntreprise(): Response
      {
-       return $this->render('pro_stage/filtreEntreprise.html.twig');
+       return $this->render('pro_stage/filtreEntreprises.html.twig');
      }
 
-     public function entreprise(): Response
+     public function entreprise($entreprise_ID): Response
      {
-       return $this->render('pro_stage/entreprise.html.twig');
+       return $this->render('pro_stage/entreprise.html.twig',['entreprise_ID' => $entreprise_ID]);
      }
 
-     //Controller pour les pages des formations
+     //Controller pour les pages des Formations
 
      public function filtreFormations(): Response
      {

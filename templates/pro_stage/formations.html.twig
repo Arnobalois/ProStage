@@ -1,1 +1,38 @@
-<center><H1>Cette page affichera la liste des stages contenant la formation {formation_ID}</H1></center>
+
+{% extends 'base.html.twig'%}
+  {% block contenue %}
+  <center><H1>Liste des stagee pour {{formation_ID}}</H1></center>
+  <table class="table">
+				<thead>
+					<tr>
+
+						<th>
+							Stage
+						</th>
+						<th>
+							Entreprise
+						</th>
+						<th>
+						  Formation
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							Stage 1
+						</td>
+						<td>
+							Capgemini
+						</td>
+						<td>
+						 {{formation_ID}}
+						</td>
+
+					</tr>
+
+				</tbody>
+			</table>
+
+
+  {% endblock %}
