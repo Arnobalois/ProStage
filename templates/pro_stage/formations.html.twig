@@ -1,7 +1,7 @@
 
 {% extends 'base.html.twig'%}
   {% block contenue %}
-  <center><H1>Liste des stagee pour {{formation_ID}}</H1></center>
+
   <table class="table">
 				<thead>
 					<tr>
@@ -17,21 +17,30 @@
 						</th>
 					</tr>
 				</thead>
-				<tbody>
-					<tr>
-						<td>
-							Stage 1
-						</td>
-						<td>
-							Capgemini
-						</td>
-						<td>
-						 {{formation_ID}}
-						</td>
+        {% for StageCourant in stages%}
 
-					</tr>
+              <tbody>
+                <tr>
+                  <td>
+                    <a href="/Stages/{{StageCourant.nom}}"> {{StageCourant.nom}} </a>
+                  </td>
+                  <td>
+                    {{StageCourant.Entreprise.nom}}
+                  </td>
+                  <td>
+                  {% for formationCourante in StageCourant.Formation %}
 
-				</tbody>
+                  {{formationCourante.nom}}
+                  {% endfor %}
+
+                  </td>
+
+                </tr>
+
+              </tbody>
+
+
+              {% endfor %}
 			</table>
 
 

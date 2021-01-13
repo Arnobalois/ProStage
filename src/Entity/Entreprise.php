@@ -39,6 +39,11 @@ class Entreprise
      */
     private $stages;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $Adresse;
+
     public function __construct()
     {
         $this->stages = new ArrayCollection();
@@ -111,6 +116,18 @@ class Entreprise
                 $stage->setEntreprise(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getAdresse(): ?string
+    {
+        return $this->Adresse;
+    }
+
+    public function setAdresse(string $Adresse): self
+    {
+        $this->Adresse = $Adresse;
 
         return $this;
     }

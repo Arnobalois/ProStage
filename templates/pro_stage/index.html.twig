@@ -1,96 +1,50 @@
 {% extends 'base.html.twig'%}
   {% block contenue %}
   <table class="table">
-				<thead>
-					<tr>
+  <thead>
+    <tr>
+      <th>
+        Stage
+      </th>
+      <th>
+        Entreprise
+      </th>
+      <th>
+        Formation
+      </th>
+    </tr>
+  </thead>
 
-						<th>
-							Stage
-						</th>
-						<th>
-							Entreprise
-						</th>
-						<th>
-						  Formation
-						</th>
-					</tr>
-				</thead>
+  {% for StageCourant in stages%}
+
 				<tbody>
 					<tr>
 						<td>
-							Stage 1
+							<a href="{{path('pro_stage_stages',{id:StageCourant.id})}}"> {{StageCourant.nom}} </a>
 						</td>
+
+
 						<td>
-							Capgemini
+							{{StageCourant.Entreprise.nom}}
 						</td>
+
+
 						<td>
-						 DUT info
+            {% for formationCourante in StageCourant.Formation %}
+
+            {{formationCourante.nom}}
+            {% endfor %}
+
 						</td>
 
 					</tr>
 
 				</tbody>
-        <tbody>
-					<tr>
-						<td>
-							Stage 1
-						</td>
-						<td>
-							Capgemini
-						</td>
-						<td>
-						 DUT info
-						</td>
 
-					</tr>
 
-				</tbody>
-        <tbody>
-					<tr>
-						<td>
-							Stage 1
-						</td>
-						<td>
-							Capgemini
-						</td>
-						<td>
-						 DUT info
-						</td>
+        {% endfor %}
 
-					</tr>
 
-				</tbody>
-        <tbody>
-					<tr>
-						<td>
-							Stage 1
-						</td>
-						<td>
-							Capgemini
-						</td>
-						<td>
-						 DUT info
-						</td>
-
-					</tr>
-
-				</tbody>
-        <tbody>
-					<tr>
-						<td>
-							Stage 1
-						</td>
-						<td>
-							Capgemini
-						</td>
-						<td>
-						 DUT info
-						</td>
-
-					</tr>
-
-				</tbody>
-        
 			</table>
 
 

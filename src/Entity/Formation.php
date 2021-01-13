@@ -19,7 +19,7 @@ class Formation
      */
     private $id;
 
-  
+
     /**
      * @ORM\Column(type="string", length=255)
      */
@@ -121,7 +121,7 @@ class Formation
     {
         if (!$this->stages->contains($stage)) {
             $this->stages[] = $stage;
-            $stage->setFormation($this);
+            $stage->addFormation($this);
         }
 
         return $this;

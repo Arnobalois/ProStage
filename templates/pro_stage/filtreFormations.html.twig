@@ -2,30 +2,12 @@
 {% extends 'base.html.twig'%}
 {% block contenue %}
 <ul>
+{% for formationCourante in formations %}
+
 				<li class="list-item">
-					<a href="/Formations/LP_Prog">LP_Prog</a>
+					<a href="{{path('pro_stage_formations',{formation_ID:formationCourante.id})}}">{{formationCourante.nom}}</a>
 				</li>
-				<li class="list-item">
-					Formation 2
-				</li>
-				<li class="list-item">
-					Formation 3
-				</li>
-				<li class="list-item">
-					Formation 4
-				</li>
-				<li class="list-item">
-					Formation 5
-				</li>
-				<li class="list-item">
-					Formation 6
-				</li>
-				<li class="list-item">
-				 Formation 7
-				</li>
-				<li class="list-item">
-					Formation 8
-				</li>
+{% endfor %}
 			</ul>
 
 	{% endblock %}
