@@ -19,5 +19,17 @@ pro_stage_formations:
     controller: App\Controller\ProStageController::formations
 
 pro_stage_stages:
-    path: /Stages/{id}
+    path: /Stages/{stage}
     controller: App\Controller\ProStageController::stages
+
+pro_stage_ajouterEntreprise:
+    path: /AjouterEntreprise
+    controller: App\Controller\ProStageController::AjouterEntreprise
+
+pro_stage_modifierEntreprise:
+    path: /Modifier/{id}
+    controller: App\Controller\ProStageController::ModifierEntreprise
+
+pro_stage_ajouter:
+    path: /Ajouter
+    controller: App\Controller\ProStageController::AjouterStage

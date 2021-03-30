@@ -1,7 +1,139 @@
 {% extends 'base.html.twig'%}
 {% block contenue %}
 
-<center><H1>Cette page affichera le descriptif du stage ayant pour identifiant {{stages.nom}} </H1></center>
+
+<!-- Titre du stage ( Nom ) ! -->
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<center><h1>
+				{{stage.nom}}
+			</h1></center>
+		</div>
+	</div>
+</div>
+
+<!-- Affichage de la durée du stage  ! -->
+
+	<div class="row">
+		<div class="col-md-12">
+			<h3>
+				Durée du stage
+			</h3>
+			<p>
+      {{stage.Duree}} mois
+			</p>
+		</div>
+	</div>
+
+<!-- Affichage de la date du début du stage  ! -->
+
+  <div class="row">
+		<div class="col-md-12">
+			<h3>
+				Date début stage
+			</h3>
+			<p>
+      {{stage.DateDebut | date("d/m/y")}}
+			</p>
+		</div>
+	</div>
+
+<!-- Affichage de l'entreprise  ! -->
+
+  <div class="row">
+		<div class="col-md-12">
+			<h3>
+				Entreprise
+			</h3>
+			<p>
+      {{stage.Entreprise.nom}}
+				</p>
+		</div>
+	</div>
+
+  <!-- Affichage des Formations  ! -->
+
+  <div class="row">
+		<div class="col-md-12">
+			<h3>
+				Formations
+			</h3>
+			<p>
+      {% for formationCourante in stage.Formation %}
+      {{formationCourante.nom}} /
+
+      {% endfor %}
+
+			</p>
+		</div>
+	</div>
+
+  <!-- Affichage de la Description du stage  ! -->
+
+  <div class="row">
+		<div class="col-md-12">
+			<h3>
+			Description du stage
+			</h3>
+			<p>
+      {{stage.Description}}
+			</p>
+		</div>
+	</div>
+
+    <!-- Affichage des compétences requise pour le stage  ! -->
+
+  <div class="row">
+		<div class="col-md-12">
+			<h3>
+				Competences Requise pour ce stage
+			</h3>
+			<p>
+      {{stage.CompetencesRequises}}
+			</p>
+		</div>
+	</div>
+
+    <!-- Affichage de l'experience requise  ! -->
+
+  <div class="row">
+		<div class="col-md-12">
+			<h3>
+				Exprience Requise
+			</h3>
+			<p>
+      {{stage.experienceRequise}}
+			</p>
+		</div>
+	</div>
+
+    <!-- Affichage de l'adresse Email de l'entreprise   ! -->
+
+  <div class="row">
+		<div class="col-md-12">
+			<h3>
+			Email de l'entreprise
+			</h3>
+			<p>
+      {{stage.Email}}
+			</p>
+		</div>
+	</div>
+
+    <!-- Affichage du Contact  ! -->
+
+  <div class="row">
+		<div class="col-md-12">
+			<h3>
+				Contact
+			</h3>
+			<p>
+      {{stage.contact}}
+				</p>
+		</div>
+	</div>
 
 
   {% endblock %}

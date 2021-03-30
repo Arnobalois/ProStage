@@ -1,0 +1,25 @@
+{% extends 'base.html.twig'%}
+
+{% block contenue %}
+
+{% if action == "ajouter"%}
+<h1>Ajout d'une entreprise</h1>
+{%else%}
+<h1>Modifier un entreprises</h1>
+{%endif%}
+{{form_start(vueFormulaire)}}
+
+{{form_row(vueFormulaire.Nom, {'attr':{'placeholder':"Nom Entreprise"}})}}
+
+{{form_row(vueFormulaire.URL_Site_Web)}}
+
+{{form_row(vueFormulaire.Adresse, {'attr':{'placeholder':"exemple@exemple.exemple"}})}}
+
+
+{{form_end(vueFormulaire)}}
+<button type="submit" class="btn btn-dark">Enregistrer</button>
+
+
+
+
+{%endblock%}

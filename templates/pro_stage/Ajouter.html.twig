@@ -1,0 +1,29 @@
+{% extends 'base.html.twig'%}
+
+{% block contenue %}
+
+
+{{form_start(vueFormulaire)}}
+
+{{form_row(vueFormulaire.Nom, {'attr':{'placeholder':"Sujet du stage ou Intitulé du stage "}})}}
+
+{{form_row(vueFormulaire.Email)}}
+
+{{form_row(vueFormulaire.Contact, {'attr':{'placeholder':"Numero de tel"}})}}
+
+{{form_row(vueFormulaire.Description)}}
+
+{{form_row(vueFormulaire.CompetencesRequises, {'attr':{'placeholder':"Oui ou Non"}})}}
+
+{{form_row(vueFormulaire.ExperienceRequise, {'attr':{'placeholder':"Oui ou Non"}})}}
+
+{{form_row(vueFormulaire.Duree, {'attr':{'placeholder':"Durée du stage en Mois ou en Années"}})}}
+
+
+
+{{form_end(vueFormulaire)}}
+
+<button type="submit" class="btn btn-dark">Enregistrer</button>
+
+
+{%endblock%}

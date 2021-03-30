@@ -22,7 +22,7 @@
               <tbody>
                 <tr>
                   <td>
-                    <a href="/Stages/{{StageCourant.nom}}"> {{StageCourant.nom}} </a>
+                    <a href="{{path('pro_stage_stages',{stage:StageCourant.nom})}}"> {{StageCourant.nom}} </a>
                   </td>
                   <td>
                     {{StageCourant.Entreprise.nom}}
@@ -30,7 +30,7 @@
                   <td>
                   {% for formationCourante in StageCourant.Formation %}
 
-                  {{formationCourante.nom}}
+                  {{formationCourante.nom}} /
                   {% endfor %}
 
                   </td>

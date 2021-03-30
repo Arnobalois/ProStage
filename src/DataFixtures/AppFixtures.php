@@ -103,10 +103,10 @@ class AppFixtures extends Fixture
         $Competences =array("C++","CSS/HTML","Java","SQL","PHP/JavaScript","C","Shell");
         $Experience = array("Oui","Non");
 
-        foreach ($formations as $formation){
 
 
-        for($i = 0 ; $i < 5 ; $i++){
+
+        for($i = 0 ; $i < 25 ; $i++){
           $stage= new Stage();
 
           $stage -> setNom($faker->JobTitle());
@@ -119,12 +119,15 @@ class AppFixtures extends Fixture
           $stage -> setContact($faker->phoneNumber());
           $stage -> setEntreprise($Entreprises[$faker->numberbetween($min=0 , $max = 9)]);
 
-          $stage -> addFormation($formation);
-          $formation -> addStage($stage);
+          $nombremin = $faker->numberbetween($min=0 , $max=7);
+          $nombremax = $faker->numberbetween($min=$nombremin , $max = 7);
 
+          for($k = $nombremin ; $k <= $nombremax ; $k++ ){
+            $formation = $formations[$k];
+            $stage -> addFormation($formation);
+            $formation -> addStage($stage);
+          }
           $Stages[]=$stage ;
-
-        }
       }
 
         foreach ($Stages as $Stage){

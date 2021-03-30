@@ -1,16 +1,37 @@
 {% extends 'base.html.twig'%}
 {% block contenue %}
-<ul>
-{% for EntrerpriseCourante in entreprises %}
+      <table class="table">
+    				<thead>
+    					<tr>
+    						<th>
+    							Entreprise
+    						</th>
+    						<th>
+    						  Option
+    						</th>
+    					</tr>
+    				</thead>
 
-				<li class="list-item">
-					<a href="{{path('pro_stage_entreprise',{entreprise_ID:EntrerpriseCourante.id})}}">
-					{{EntrerpriseCourante.nom}}
-					</a>
-				</li>
+            {% for EntrerpriseCourante in entreprises%}
 
-{% endfor %}
+          				<tbody>
+          					<tr>
+          						<td>
+                      <a href="{{path('pro_stage_entreprise',{entreprise_ID:EntrerpriseCourante.id})}}">
+            					{{EntrerpriseCourante.nom}}
+            					</a>
+          						</td>
+          						<td>
+                  <a href="{{path('pro_stage_modifierEntreprise',{id:EntrerpriseCourante.id})}}"> Modifier </a>
 
-			</ul>
+          						</td>
+
+          					</tr>
+
+          				</tbody>
+
+
+                  {% endfor %}
+    			</table>
 
 	{% endblock %}
