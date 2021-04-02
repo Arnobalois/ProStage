@@ -18,6 +18,13 @@ use App\Form\StageType;
 
 class ProStageController extends AbstractController
 {
+
+
+
+  //La commande pour pour installer easyadmin n'a pas marcher même en utilisant la commande que vous nous aviez donné sur Teams
+
+
+
     public function index( StageRepository $repositoryStage): Response
     {
       //Récupérer les stages enregistrées en BD
